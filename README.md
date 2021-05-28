@@ -1,59 +1,110 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Pal-lette
 
-Welcome USER_NAME,
+<img src="">
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+### Live Site = [Pal-lette]()
 
-## Gitpod Reminders
+### Vegetarian/Vegan Recipe Helper 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+A website designed to provide user's with a choice of vegatarian and vegan recipes in an easy to use format.
+It features a register link on the **Welcome Page** to allow users to bypass all information on the site instantly to sign up.
+It also features a log in option for users who may have registered already.
+The idea was to create an easy to use and interactive recipe site where the user can browse for various vegetarian and vegan options and also have the choice using CRUD functionality to create,read,update and delete their own recipes and provide feedback in the form of likes on others recipes.
 
-`python3 -m http.server`
+#### Business Goals
+  - To increase traffic to the site and in turn increase registration.
+  - To provide simple easy sign up process to enable users to register.
+  - To provide simple yet comprehensive information on recipes in the vegetarian/vegan area.
+  - To be visually striking enough to catch attention and provoke curiosity to explore the page.
+  - To potentially encourage advertisers to place their ads on the page for untensils and other cooking items thus opening up more opportunities for more recipes, engagement, special offers and expansion of the site.
+  - To build awareness of the brand.
+  - Get users to choose a recipe guide and to be able to engage by uploading their own thus making it a creative and user driven platform.
 
-A blue button should appear to click: _Make Public_,
+#### Customer Goals
+  - To find the best recipe for their needs.
+  - To be able to find any information they may need.
+  - To see benefits to signing up for such a site.
+  - To be able to create their own recipe.
+  - To be able to read existing recipes added by anybody.
+  - To be able to update existing recipes added by themselves.
+  - To be able to delete existing recipes added by themselves.
 
-Another blue button should appear to click: _Open Browser_.
+# UX
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+ #### Potential Customers
+  - Any vegetarian or vegans that may find it difficult to find a specifically diet based site to find recipes.
+  - People interested in trying a new diet or lifestyle.
+  - As this diet type is on the rise due to publicity in such documentaries as the gamechangers and other on netflix and other sources, customers may also be people who are just curious about how practical the diet may or may not be.
+  - Any user who may just stumble across the page in an attempt to find recipes online.
 
-A blue button should appear to click: _Make Public_,
+#### This website will provide value with
+  - An easy sign up process.
+  - A simple format to navigate for older and younger users alike.
+  - Accurate information.
+  - A good UX so as to encourage visitors to register and upload their own recipes and to leave feedback on others recipes.
+  - Details of convenient information on each recipes so as to make the process as easy as possible to translate into real world cooking.
 
-Another blue button should appear to click: _Open Browser_.
+#### User Stories
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+ 1. As a new user I want to know the sites purpose immediately.
+ 2. As a new user I want an intuitive search experience.
+ 3. As a new user I expect to be able to navigate the site easily to find a recipe.
+ 4. As a new user I expect to be able to sign up to services.
+ 5. As a potential customer I want an easy sign up process.
+ 6. As a potential customer I want an easily explained process for the recipes.
+ 7. As a potential customer I want to have a good choice as well as leave feedback on recipes.
+ 8. As a returning user I want information and other useful content to entice me to return.
+ 9. As a returning user I want to be able to create, read, update and delete my own recipes.
+ 10. As a returning user I want to be able to have access to follow the company on social media.
+ 11. As a user I expect to be able to login and out of my own profile.
+ 12. As a site admin I expect to be able to create, read, update and delete any information on the site.
 
-To log into the Heroku toolbelt CLI:
+# Design
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Colour Scheme
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+## Fonts
 
-## Updates Since The Instructional Video
+## Imagery
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Wireframes
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+# Features
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Common features on all pages 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Existing Features 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Features Left to Implement
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+# Technologies Used
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+# Testing 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Compatibility
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Performance 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## User Stories Testing
 
----
+## Usability 
 
-Happy coding!
+## Issues and Fixes during Development
+
+## Known Bugs
+
+# Deployment 
+
+# Credits 
+
+ ## Code
+
+ - All other code was written by the creator of the site - **Paul King**.
+
+ ## Content 
+
+ ## Text
+
+ ## Media 
+
+ ## Acknowledgements 
