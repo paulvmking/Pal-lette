@@ -9,3 +9,11 @@ body {
 .text-shadow-icon {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
+
+a {
+    color: inherit;
+}
+
+.card-panel {
+    background-color: #fbe5d0;
+}
