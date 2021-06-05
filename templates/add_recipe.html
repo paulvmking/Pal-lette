@@ -3,26 +3,63 @@
 
 <h3 class="red-text text-darken-4 center-align">Add your own custom recipe here!</h3>
 
-<div class="row">
+<div class="row card-panel grey-lighten-6">
     <form class="col s12">
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-plus prefix"></i>
-                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                <label for="icon_prefix2">Name of Recipe</label>
+                <i class="fas fa-pencil-alt red-text prefix"></i>
+                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
+                    required>
+                <label for="recipe_name">Name of Recipe</label>
             </div>
         </div>
-    </form>
-</div>
-<div class="row">
-    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s4">
+                <i class="fas fa-user-clock red-text prefix"></i>
+                <textarea id="prep_time" name="prep_time" minlength="1" maxlength="4"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="prep_time">Preparation Time</label>
+            </div>
+            <div class="input-field col s4">
+                <i class="fas fa-clock red-text prefix"></i>
+                <textarea id="cook_time" name="cook_time" minlength="1" maxlength="4"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="cook_time">Cooking Time</label>
+            </div>
+            <div class="input-field col s4">
+                <i class="fas fa-utensils red-text prefix"></i>
+                <textarea id="serves" name="serves" minlength="1" maxlength="4" class="materialize-textarea validate"
+                    required></textarea>
+                <label for="serves">Serves</label>
+            </div>
+        </div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-pepper-hot prefix"></i>
-                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                <label for="icon_prefix2">Ingredients</label>
+                <i class="fas fa-pepper-hot red-text prefix"></i>
+                <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="5" maxlength="50"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="recipe_ingredients">Ingredients</label>
             </div>
         </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-align-left red-text prefix"></i>
+                <textarea id="recipe_steps" name="recipe_steps" minlength="5" maxlength="50"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="recipe_steps">Instructions</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="fas fa-seedling green-text prefix"></i>
+                    <label for="is_vegan" class="green-text">
+                        <input type="checkbox" id="is_vegan" name="is_vegan">
+                        <span class="lever"></span>
+                        Vegan Friendly
+                    </label>
+                </div>
+            </div>
     </form>
 </div>
 
