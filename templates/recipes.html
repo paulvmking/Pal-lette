@@ -31,9 +31,9 @@
             </div>
             <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
-                    <li class="tab red-text">Prep: {{ recipe.prep_time }}</li>
-                    <li class="tab red-text">Cook: {{ recipe.cook_time }}</li>
-                    <li class="tab red-text">Serves: {{ recipe.serves }}</li>
+                    <li class="tab red-text fas fa-user-clock"> Prep: {{ recipe.prep_time }}</li>
+                    <li class="tab red-text fas fa-clock"> Cook: {{ recipe.cook_time }}</li>
+                    <li class="tab red-text fas fa-utensils"> Serves: {{ recipe.serves }}</li>
                 </ul>
             </div>
             {% endfor %}
