@@ -32,4 +32,8 @@ $(document).ready(function () {
             }
         });
     }
+
+    $("#like.fas.fa-heart").click(function () {
+        $(this).toggleClass("green");
+     });
 });

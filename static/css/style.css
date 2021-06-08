@@ -27,3 +27,7 @@ div#card-content.card-content {
     text-align: center;
     height: 22vh;
 }
+
+i#like.fas.fa-heart.green {
+    background-color: green;
+}
