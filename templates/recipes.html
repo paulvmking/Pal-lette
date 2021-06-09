@@ -20,6 +20,9 @@
                 </span>
                 <span class="center-align"><p>Created by: {{ recipe.created_by }}</p></span>
             </div>
+            <div class="center-align">
+                <a href="{{ url_for('view_recipe') }}" class="waves-effect red btn-small">View Recipe</a>
+            </div>
             <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
                     <li class="tab red-text fas fa-user-clock"> Prep: {{ recipe.prep_time }} MINS</li>
