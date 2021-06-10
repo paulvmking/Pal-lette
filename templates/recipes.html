@@ -27,8 +27,10 @@
                 <div class="row">
                     <div class="col s4 btn-container">
                         <div>
-                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                                class="waves-effect red btn-small">Edit Recipe</a>
+                            {% if session.user|lower == recipe.created_by|lower %}
+                                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                                    class="waves-effect red btn-small">Edit Recipe</a>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col s4 btn-container">
@@ -38,7 +40,9 @@
                     </div>
                     <div class="col s4 btn-container">
                         <div>
-                            <a href="#" class="waves-effect red btn-small">Delete Recipe</a>
+                            {% if session.user|lower == recipe.created_by|lower %}
+                                <a href="#" class="waves-effect red btn-small">Delete Recipe</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
