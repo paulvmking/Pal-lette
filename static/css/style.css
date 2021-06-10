@@ -32,3 +32,8 @@ div#card-content.card-content {
 i#like.fas.fa-heart.green {
     background-color: green;
 }
+
+div.col.s4.btn-container {
+    padding: 0px;
+    border: 0px;
+}
