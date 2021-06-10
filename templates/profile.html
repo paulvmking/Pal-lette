@@ -1,22 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row">
-        <div class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
-            <div class="card-panel">
-                <h3 class="center-align light-blue-text text-darken-4">
-                    {{ username }}'s Profile
-                </h3>
-            </div>
+<div class="row">
+    <div class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+        <div class="card-panel">
+            <h3 class="center-align light-blue-text text-darken-4">
+                {{ username }}'s Profile
+            </h3>
         </div>
     </div>
+</div>
 
-    <div class="row center-align">
-        <div class="col s4">
-            <a class="waves-effect waves-light red btn-large">My Recipes</a>
-        </div>
-        <div class="col s4">
-            <a class="waves-effect waves-light red btn-large">Favourite Recipes</a>
-        </div>
+<h3 class="red-text text-darken-4 center-align">Your Favourites</h3>
 
-    {% endblock %}
+{% for user in users %}
+<div class="row center-align">
+    <div class="col s12">
+        <p>{{ user.favourite_recipes }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<h3 class="red-text text-darken-4 center-align">Your Recipes</h3>
+
+{% for recipe in recipes %}
+{% if recipe.created_by == username %}
+
+<div class="row">
+    <div class="col s12 m12">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title center-align">{{ recipe.recipe_name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% else %}
+
+
+{% endif %}
+{% endfor %}
+
+{% endblock %}
