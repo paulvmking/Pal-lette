@@ -14,11 +14,14 @@
 <h3 class="red-text text-darken-4 center-align">Your Favourites</h3>
 
 {% for user in users %}
+{% if session.user == user.username %}
 <div class="row center-align">
     <div class="col s12">
         <p>{{ user.favourite_recipes }}</p>
     </div>
 </div>
+{% endif %}
+
 {% endfor %}
 
 <h3 class="red-text text-darken-4 center-align">Your Recipes</h3>
