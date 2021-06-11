@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="center-align btn-container text-shadow">
                         <div>
-                            <a href="#" class="waves-effect red btn-small">View Recipe</a>
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="waves-effect red btn-small">View Recipe</a>
                         </div>
                     </div>
                 </div>
