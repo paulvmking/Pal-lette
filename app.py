@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -18,11 +19,34 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+recipes = mongo.db.recipes.find()
+
+PER_PAGE = 4
+
+
+def paginated(recipes):
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    offset = page * PER_PAGE - PER_PAGE
+    return recipes[offset: offset + PER_PAGE]
+
+
+def pagination_args(recipes):
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    total = recipes.count()
+    return Pagination(page=page, per_page=PER_PAGE, total=total)
+
+
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
+    recipes = mongo.db.recipes.find().sort("_id", -1)
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
+    return render_template("recipes.html", recipes=recipes,
+                           recipe_paginated=recipes_paginated,
+                           pagination=pagination,)
 
 
 @app.route("/register", methods=["GET", "POST"])

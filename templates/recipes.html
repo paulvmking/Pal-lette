@@ -2,6 +2,9 @@
 {% block content %}
 
 <h3 class="red-text text-darken-4 center-align">All Recipes</h3>
+<div class="row center-align">
+    {{ pagination.links }}
+</div>
 
 <div class="row">
     {% for recipe in recipes %}
