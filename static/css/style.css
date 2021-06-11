@@ -14,6 +14,10 @@ a {
     color: inherit;
 }
 
+.btn-small {
+    margin: 5px;
+}
+
 .card-panel {
     background-color: #fbe5d0;
 }
