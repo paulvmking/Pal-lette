@@ -27,6 +27,11 @@ a {
     width: 100%;
 }
 
+div.card-image.recipe-image img {
+    height: 66vh;
+    width: 100%;
+}
+
 div#card-content.card-content {
     text-align: center;
     height: 22vh;
