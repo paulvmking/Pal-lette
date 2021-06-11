@@ -19,7 +19,9 @@
                 <span class="card-title"> {{ recipe.recipe_name }} </span>
                 <span>
                     {% if recipe.is_vegan == "on" %}
-                    <i class="fas fa-seedling green-text"> Vegan Friendly</i>
+                        <i class="fas fa-seedling green-text"> Vegan Friendly</i>
+                    {% else %}
+                        <i class="fas fa-seedling red-text"> Not Vegan Friendly</i>
                     {% endif %}
                 </span>
                 <div class="row">
