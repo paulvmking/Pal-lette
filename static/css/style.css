@@ -32,6 +32,10 @@ div.card-image.recipe-image img {
     width: 100%;
 }
 
+span.card-title {
+    word-break: none;
+}
+
 div#card-content.card-content {
     text-align: center;
     height: 22vh;
@@ -47,20 +51,44 @@ div.col.s4.btn-container {
     border: 0px;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 1220px) {
     .tab.red-text.fas.fa-user-clock {
       display: none;
     }
   }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 1220px) {
     .tab.red-text.fas.fa-clock {
       display: none;
     }
   }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 1220px) {
     .tab.red-text.fas.fa-utensils {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 1220px) {
+    p#created_by {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 1284px) {
+    i.fas.fa-seedling.green-text {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 1284px) {
+    i.fas.fa-seedling.red-text {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 705px) {
+    ul.tabs.tabs-fixed-width {
       display: none;
     }
   }
