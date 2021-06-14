@@ -190,6 +190,15 @@ def view_recipe(recipe_id):
                            categories=categories)
 
 
+@app.route("/favourite_recipe/<recipe_id>", methods=["GET", "POST"])
+def favourite_recipe(recipe_id):
+    mongo.db.users.find_one_and_update(
+        {"username": session["user"].lower()},
+        {"$push": {"favourite_recipes": ObjectId(recipe_id)}})
+    flash("Recipe added to favourites!")
+    return redirect(url_for("get_recipes"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
