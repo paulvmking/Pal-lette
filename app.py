@@ -192,11 +192,19 @@ def view_recipe(recipe_id):
 
 @app.route("/favourite_recipe/<recipe_id>", methods=["GET", "POST"])
 def favourite_recipe(recipe_id):
-    mongo.db.users.find_one_and_update(
-        {"username": session["user"].lower()},
-        {"$push": {"favourite_recipes": ObjectId(recipe_id)}})
-    flash("Recipe added to your favourites!")
-    return redirect(url_for("profile", username=session["user"]))
+    favourites = list(mongo.db.users.find(
+        {"favourite_recipes": ObjectId(recipe_id)}))
+    favourite = mongo.db.users.find_one(
+        {"favourite_recipes": ObjectId(recipe_id)})
+    if favourite in favourites:
+        flash("Recipe already your favourites!")
+        return redirect(url_for("get_recipes"))
+    else:
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"].lower()},
+            {"$push": {"favourite_recipes": ObjectId(recipe_id)}})
+        flash("Recipe added to your favourites!")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/remove_recipe/<recipe_id>", methods=["GET", "POST"])
