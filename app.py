@@ -171,6 +171,11 @@ def edit_recipe(recipe_id):
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    list(mongo.db.users.find(
+        {"favourite_recipes": ObjectId(recipe_id)}))
+    mongo.db.users.find_one_and_update(
+            {"username": session["user"].lower()},
+            {"$pull": {"favourite_recipes": ObjectId(recipe_id)}})
     flash("Recipe Deleted Successfully")
     return redirect(url_for("get_recipes"))
 
