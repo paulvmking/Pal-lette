@@ -42,7 +42,7 @@ div#card-content.card-content {
     padding-bottom: 0px;
 }
 
-i#like.fas.fa-heart.green {
+i#like.fas.fa-plus.green {
     background-color: green;
 }
 

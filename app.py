@@ -195,8 +195,17 @@ def favourite_recipe(recipe_id):
     mongo.db.users.find_one_and_update(
         {"username": session["user"].lower()},
         {"$push": {"favourite_recipes": ObjectId(recipe_id)}})
-    flash("Recipe added to favourites!")
-    return redirect(url_for("get_recipes"))
+    flash("Recipe added to your favourites!")
+    return redirect(url_for("profile", username=session["user"]))
+
+
+@app.route("/remove_recipe/<recipe_id>", methods=["GET", "POST"])
+def remove_recipe(recipe_id):
+    mongo.db.users.find_one_and_update(
+        {"username": session["user"].lower()},
+        {"$pull": {"favourite_recipes": ObjectId(recipe_id)}})
+    flash("Recipe removed from your favourites!")
+    return redirect(url_for("profile", username=session["user"]))
 
 
 if __name__ == "__main__":
