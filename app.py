@@ -226,6 +226,19 @@ def edit_category(category_id):
         return redirect(url_for("profile", username=session["user"]))
 
 
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if username == "admin":
+        mongo.db.categories.remove({"_id": ObjectId(category_id)})
+        flash("Category has been successfully deleted")
+        return redirect(url_for("get_categories"))
+    else:
+        flash("You are not authorised to view that page!")
+        return redirect(url_for("profile", username=session["user"]))
+
+
 @app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
 def view_recipe(recipe_id):
 
