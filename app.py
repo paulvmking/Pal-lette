@@ -260,7 +260,7 @@ def favourite_recipe(recipe_id):
     favourite = mongo.db.users.find_one(
         {"favourite_recipes": ObjectId(recipe_id)})
     if favourite in favourites:
-        flash("Recipe already your favourites!")
+        flash("This recipe is already in your favourites!")
         return redirect(url_for("get_recipes"))
     else:
         mongo.db.users.find_one_and_update(
@@ -275,7 +275,7 @@ def remove_recipe(recipe_id):
     favourites = list(mongo.db.users.find(
         {"favourite_recipes": ObjectId(recipe_id)}))
     if len(favourites) <= 0:
-        flash("You currently have no favourites to remove!")
+        flash("This recipe is not in your favourites!")
         return redirect(url_for("get_recipes"))
     else:
         mongo.db.users.find_one_and_update(
