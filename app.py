@@ -177,8 +177,14 @@ def delete_recipe(recipe_id):
 
 @app.route("/get_categories")
 def get_categories():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("categories.html", categories=categories)
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if username == "admin":
+        categories = list(mongo.db.categories.find().sort("category_name", 1))
+        return render_template("categories.html", categories=categories)
+    else:
+        flash("You are not authorised to view that page!")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/add_category", methods=["GET", "POST"])
