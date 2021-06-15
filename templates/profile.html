@@ -13,15 +13,17 @@
 
 <h3 class="red-text text-darken-4 center-align">Your Favourites</h3>
 
-{% for user in users %}
-{% if session.user == user.username %}
-<div class="row center-align">
-    <div class="col s12">
-        <p>{{ user.favourite_recipes }}</p>
+{% for favourite in favourites %}
+<div class="row">
+  <div class="col s12 m12">
+    <div class="card orange darken-2 text-shadow">
+      <div class="card-content white-text">
+        <span class="card-title center-align">{{ favourite.recipe_name }}
+        </span>
+      </div>
     </div>
+  </div>
 </div>
-{% endif %}
-
 {% endfor %}
 
 <h3 class="red-text text-darken-4 center-align">Your Recipes</h3>

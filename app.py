@@ -113,16 +113,19 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     users = list(mongo.db.users.find())
     recipes = list(mongo.db.recipes.find())
-
+    favourite_recipes = mongo.db.users.find_one(
+                {"username": session["user"]})["favourite_recipes"]
+    favourites = []
+    for recipe in favourite_recipes:
+        favourites.append(mongo.db.recipes.find_one({"_id": recipe}))
     if session["user"]:
         return render_template(
             "profile.html", username=username, users=users,
-            recipes=recipes)
+            recipes=recipes, favourites=favourites)
 
     return redirect(url_for("login"))
 
