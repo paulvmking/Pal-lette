@@ -42,10 +42,6 @@ div#card-content.card-content {
     padding-bottom: 0px;
 }
 
-i#like.fas.fa-plus.green {
-    background-color: green;
-}
-
 div.col.s4.btn-container {
     padding: 0px;
     border: 0px;
