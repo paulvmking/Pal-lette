@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% if session.user|lower == recipe.created_by|lower %}
+{% if session.user|lower == recipe.created_by|lower || if session.user|lower == "admin"|lower %}
 
 <h3 class="red-text text-darken-4 center-align">Changed something? Edit your recipes here!</h3>
 
@@ -13,7 +13,7 @@
                 <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled selected>Choose Meal type</option>
                     {% for category in categories %}
-                        {% if category.category_name == recipe.category_name %}
+                        {% if category.category_name == recipe.category_name || if session.user|lower == "admin"|lower %}
                             <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
                         {% else %}
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
