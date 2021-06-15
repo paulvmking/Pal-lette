@@ -201,11 +201,17 @@ def favourite_recipe(recipe_id):
 
 @app.route("/remove_recipe/<recipe_id>", methods=["GET", "POST"])
 def remove_recipe(recipe_id):
-    mongo.db.users.find_one_and_update(
-        {"username": session["user"].lower()},
-        {"$pull": {"favourite_recipes": ObjectId(recipe_id)}})
-    flash("Recipe removed from your favourites!")
-    return redirect(url_for("profile", username=session["user"]))
+    favourites = list(mongo.db.users.find(
+        {"favourite_recipes": ObjectId(recipe_id)}))
+    if len(favourites) <= 0:
+        flash("You currently have no favourites to remove!")
+        return redirect(url_for("get_recipes"))
+    else:
+        mongo.db.users.find_one_and_update(
+            {"username": session["user"].lower()},
+            {"$pull": {"favourite_recipes": ObjectId(recipe_id)}})
+        flash("Recipe removed from your favourites!")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 if __name__ == "__main__":
