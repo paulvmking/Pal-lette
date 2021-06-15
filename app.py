@@ -196,7 +196,7 @@ def favourite_recipe(recipe_id):
         {"favourite_recipes": ObjectId(recipe_id)}))
     favourite = mongo.db.users.find_one(
         {"favourite_recipes": ObjectId(recipe_id)})
-    if favourite in favourites:
+    if favourite == favourites:
         flash("Recipe already your favourites!")
         return redirect(url_for("get_recipes"))
     else:
