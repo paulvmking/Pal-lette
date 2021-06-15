@@ -183,15 +183,21 @@ def get_categories():
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.insert_one(category)
-        flash("New Category Added")
-        return redirect(url_for("get_categories"))
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if username == "admin":
+        if request.method == "POST":
+            category = {
+                "category_name": request.form.get("category_name")
+            }
+            mongo.db.categories.insert_one(category)
+            flash("New Category Added")
+            return redirect(url_for("get_categories"))
 
-    return render_template("add_category.html")
+        return render_template("add_category.html")
+    else:
+        flash("You are not authorised to view that page!")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
