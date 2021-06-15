@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 
 recipes = mongo.db.recipes.find()
 
-PER_PAGE = 2
+PER_PAGE = 4
 
 
 def paginated(recipes, page):
@@ -32,6 +32,19 @@ def paginated(recipes, page):
         paginated_recipes,
         pagination
     ]
+
+
+@app.route("/")
+@app.route("/get_recipes")
+def get_recipes():
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    recipes = list(mongo.db.recipes.find().sort("_id", -1))
+    pagination_obj = paginated(recipes, page)
+    paginated_recipes = pagination_obj[0]
+    pagination = pagination_obj[1]
+    return render_template("recipes.html", recipes=paginated_recipes,
+                           recipe_paginated=paginated_recipes,
+                           pagination=pagination)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -48,20 +61,6 @@ def search():
                            recipe_paginated=paginated_recipes,
                            pagination=pagination,
                            title="Search Result", search=True)
-
-
-@app.route("/")
-@app.route("/get_recipes")
-def get_recipes():
-    page = request.args.get(get_page_parameter(), type=int, default=1)
-    recipes = list(mongo.db.recipes.find().sort("_id", -1))
-    pagination_obj = paginated(recipes, page)
-    paginated_recipes = pagination_obj[0]
-    pagination = pagination_obj[1]
-    print(pagination_obj)
-    return render_template("recipes.html", recipes=recipes,
-                           recipe_paginated=paginated_recipes,
-                           pagination=pagination)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -270,8 +269,8 @@ def view_recipe(recipe_id):
 
 @app.route("/favourite_recipe/<recipe_id>", methods=["GET", "POST"])
 def favourite_recipe(recipe_id):
-    favourites = list(mongo.db.users.find(
-        {"favourite_recipes": ObjectId(recipe_id)}))
+    favourites = mongo.db.users.find(
+        {"favourite_recipes": ObjectId(recipe_id)})
     favourite = mongo.db.users.find_one(
         {"favourite_recipes": ObjectId(recipe_id)})
     if favourite in favourites:
