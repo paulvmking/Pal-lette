@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% if session.user|lower == recipe.created_by|lower || if session.user|lower == "admin"|lower %}
+{% if session.user|lower == recipe.created_by|lower %}
 
 <h3 class="red-text text-darken-4 center-align">Changed something? Edit your recipes here!</h3>
 
@@ -13,7 +13,103 @@
                 <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled selected>Choose Meal type</option>
                     {% for category in categories %}
-                        {% if category.category_name == recipe.category_name || if session.user|lower == "admin"|lower %}
+                        {% if category.category_name == recipe.category_name %}
+                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                        {% else %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="category_name">Meal Type</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pencil-alt red-text prefix"></i>
+                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="30"
+                value="{{ recipe.recipe_name }}" type="text" class="validate"
+                    required>
+                <label for="recipe_name">Name of Recipe</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <i class="fas fa-user-clock red-text prefix"></i>
+                <textarea id="prep_time" name="prep_time" minlength="1" maxlength="4"
+                    class="materialize-textarea validate" required>{{ recipe.prep_time }}</textarea>
+                <label for="prep_time">Preparation Time</label>
+            </div>
+            <div class="input-field col s4">
+                <i class="fas fa-clock red-text prefix"></i>
+                <textarea id="cook_time" name="cook_time" minlength="1" maxlength="4"
+                    class="materialize-textarea validate" required>{{ recipe.cook_time }}</textarea>
+                <label for="cook_time">Cooking Time</label>
+            </div>
+            <div class="input-field col s4">
+                <i class="fas fa-utensils red-text prefix"></i>
+                <textarea id="serves" name="serves" minlength="1" maxlength="4" class="materialize-textarea validate"
+                    required>{{ recipe.serves }}</textarea>
+                <label for="serves">Serves</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pepper-hot red-text prefix"></i>
+                <textarea id="ingredients" name="ingredients" minlength="5" 
+                    class="materialize-textarea validate" required>{{ recipe.ingredients }}</textarea>
+                <label for="ingredients">Ingredients</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-align-left red-text prefix"></i>
+                <textarea id="directions" name="directions" minlength="5" 
+                    class="materialize-textarea validate" required>{{ recipe.directions }}</textarea>
+                <label for="directions">Instructions</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <div class="switch">
+                    <i class="fas fa-seedling green-text prefix"></i>
+                    <label for="is_vegan" class="green-text">
+                            {% if recipe.is_vegan == "on" %}
+                                <input type="checkbox" id="is_vegan" name="is_vegan" checked>
+                            {% else %}
+                                <input type="checkbox" id="is_vegan" name="is_vegan">
+                            {% endif %}
+                        <span class="lever"></span>
+                        Vegan Friendly
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('get_recipes') }}" class="btn red text-shadow">
+                    Cancel <i class="fas fa-times-circle right"></i>
+                </a>
+                <button class="btn green" type="submit">
+                    Edit Recipe<i class="fas fa-edit right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% elif session.user|lower == "admin"|lower %}
+
+<h3 class="red-text text-darken-4 center-align">Changed something? Edit your recipes here!</h3>
+
+<div class="row card-panel grey-lighten-6">
+    <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix orange-text text-darken-4"></i>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Choose Meal type</option>
+                    {% for category in categories %}
+                        {% if category.category_name == recipe.category_name %}
                             <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
                         {% else %}
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
