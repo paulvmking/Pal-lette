@@ -8,8 +8,14 @@
         <div class="card">
             <div class="card-image recipe-image">
                 <img src="{{ recipe.image }}">
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-heart text-shadow"
+                {% if session.user %}
+                <div class="div">
+                    <a href="{{ url_for('favourite_recipe', recipe_id=recipe._id) }}" class="btn-floating halfway-fab left waves-effect waves-light red"><i class="fas fa-plus text-shadow"
                         id="like"></i></a>
+                <a href="{{ url_for('remove_recipe', recipe_id=recipe._id) }}" class="btn-floating halfway-fab right waves-effect waves-light red"><i class="fas fa-minus text-shadow"
+                            id="like"></i></a>
+                </div>
+                {% endif %}
             </div>
             <div class="card-content">
                 <div class="row">
