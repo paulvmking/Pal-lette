@@ -75,6 +75,8 @@ Also some of the colors were used to give a healthy earthy feel to the site thro
 
 ## Fonts
 
+- The site mainly uses the default font type of **"sans-serif"** for all pages to provide easy reading for all ages and so as to not overload the user with different font types which can make the information appear less clean and manageable. I considered adding a different font as I have in other projects to identify key information but as the site is fairly spacious I did not feel the need to highlight many areas as the information in my opinion is spaced out and laid out well enough to be readable as is.
+
 ## Imagery
 
 ### Wireframes
