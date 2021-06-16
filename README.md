@@ -2,14 +2,14 @@
 
 <img src="static/images/site_images/Pallette.png">
 
-### Live Site = [Pal-lette]()
+### Live Site = [Pal-lette](https://pal-lette.herokuapp.com/)
 
 ### Vegetarian/Vegan Recipe Helper 
 
 A website designed to provide user's with a choice of vegatarian and vegan recipes in an easy to use format.
-It features a register link on the **Welcome Page** to allow users to bypass all information on the site instantly to sign up.
-It also features a log in option for users who may have registered already.
-The idea was to create an easy to use and interactive recipe site where the user can browse for various vegetarian and vegan options and also have the choice using CRUD functionality to create,read,update and delete their own recipes and provide feedback in the form of likes on others recipes.
+It features a welcome message on the **Homepage** to allow users to understand the purpose of the site as it is a very targeted recipe site.
+The idea was to create an easy to use and interactive recipe site where the user can browse for various vegetarian and vegan options and also have the choice using **CRUD** functionality to create,read,update and delete their own recipes and provide extra functionality in the form of favouriting others recipes.
+It also feature **search** functionality and **pagination** to aid the user when it gets to a point where there are alot of recipes, it rids the need to do endless scrolling as only a certain amount in this case 4 recipes will show per page but can easily be updated to display more.
 
 #### Business Goals
   - To increase traffic to the site and in turn increase registration.
