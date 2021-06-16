@@ -119,3 +119,9 @@ footer.page-footer{
       display: none;
     }
   }
+
+  @media only screen and (max-width: 375px) {
+    div.col.s12.recipe-name {
+      display: none;
+    }
+  }
