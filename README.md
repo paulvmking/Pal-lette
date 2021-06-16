@@ -1,6 +1,6 @@
 # Pal-lette
 
-<img src="">
+<img src="static/images/site_images/Pallette.png">
 
 ### Live Site = [Pal-lette]()
 
