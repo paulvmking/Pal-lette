@@ -35,6 +35,11 @@ def paginated(recipes, page):
 
 
 @app.route("/")
+@app.route("/get_homepage")
+def get_homepage():
+    return render_template("index.html")
+
+
 @app.route("/get_recipes")
 def get_recipes():
     page = request.args.get(get_page_parameter(), type=int, default=1)
