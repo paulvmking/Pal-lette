@@ -184,6 +184,11 @@ Logged in users will have access to all of the above features with the exception
 - Contains all the features from the above **New recipe** page with the exception that all the fields are **prepopulated** with the users data from their own original recipe.
 - This will also display a **flash** message to the user indicating successful editing of said recipe.
 
+#### Admin
+
+The Admin of the site has access to all above feature plus the additonal **navbar** link to **manage categories** which includes adding,editing and deleting said categories which is not available to any other users.This page contains quick link **cards** to each category for easy data manipulation.
+On top of this the admin also has the ability to create,edit and remove all recipes from all users thought the addition of extra buttons (displayed only to the admin) located on the bottom of the cards on the recipes page.
+
 ### Features Left to Implement
 
 # Technologies Used
