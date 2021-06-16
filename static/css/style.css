@@ -2,15 +2,19 @@ body {
     background-color: #fbe5d0;
    }
 
-  body {
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+}
 
-  main {
+div.nav-wrapper{
+  background-color: #b1685d;
+}
+
+main {
     flex: 1 0 auto;
-  }
+}
 
 .text-shadow {
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
@@ -22,6 +26,14 @@ body {
 
 a {
     color: inherit;
+}
+
+i#like.fas.fa-plus.text-shadow{
+  background-color: #519839;
+}
+
+i#like.fas.fa-minus.text-shadow{
+  background-color: #b04632;
 }
 
 .btn-small {

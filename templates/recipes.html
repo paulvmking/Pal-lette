@@ -31,9 +31,9 @@
                 <img src="{{ recipe.image }}">
                 {% if session.user %}
                 <div class="div">
-                    <a href="{{ url_for('favourite_recipe', recipe_id=recipe._id) }}" class="btn-floating halfway-fab left waves-effect waves-light red"><i class="fas fa-plus text-shadow"
+                    <a href="{{ url_for('favourite_recipe', recipe_id=recipe._id) }}" class="btn-floating halfway-fab left waves-effect waves-light"><i class="fas fa-plus text-shadow"
                         id="like"></i></a>
-                <a href="{{ url_for('remove_recipe', recipe_id=recipe._id) }}" class="btn-floating halfway-fab right waves-effect waves-light red"><i class="fas fa-minus text-shadow"
+                <a href="{{ url_for('remove_recipe', recipe_id=recipe._id) }}" class="btn-floating halfway-fab right waves-effect waves-light"><i class="fas fa-minus text-shadow"
                             id="like"></i></a>
                 </div>
                 {% endif %}
