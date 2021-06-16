@@ -79,6 +79,10 @@ Also some of the colors were used to give a healthy earthy feel to the site thro
 
 ## Imagery
 
+The images used are all **recipe related**. I thought it was important to have a consistant theme of visually striking recipe images,
+that were all close enough in subject matter and color to make a consistent feel across the site.The color of the images was important to have good contrast with the site **color scheme** since there is only a small amount of images present and 
+I believe the images chosen fit very well overall as they relate to the subject matter of cooking but also provide good impact both visually in arrangement and colour wise with such a plain background through the rest of the site.
+
 ### Wireframes
 
 # Features
