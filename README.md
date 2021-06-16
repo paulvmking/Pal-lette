@@ -186,10 +186,17 @@ Logged in users will have access to all of the above features with the exception
 
 #### Admin
 
-The Admin of the site has access to all above feature plus the additonal **navbar** link to **manage categories** which includes adding,editing and deleting said categories which is not available to any other users.This page contains quick link **cards** to each category for easy data manipulation.
+The Admin of the site has access to all above features plus the additonal **navbar** link to **manage categories** which includes adding,editing and deleting said categories which is not available to any other users.This page contains quick link **cards** to each category for easy data manipulation.
 On top of this the admin also has the ability to create,edit and remove all recipes from all users thought the addition of extra buttons (displayed only to the admin) located on the bottom of the cards on the recipes page.
 
 ### Features Left to Implement
+
+- **Terms and conditions** page to allow users to read through the legal documentation associated with the site.Too much time involved reviewing legal documentation to implement straight away.
+- Option to change **languages** to some other than English.Too expensive to hire someone to check translations on current budget.
+- Using **cloudinary** or similar for upload of images instead of image urls.Time constraints did not allow for implementation.
+- **Filter** option so users have even more choice on how to view recipes on the main recipes page such as being able to choose- vegan + with butter + less than 15mins.Time constraints did not allow for implementation.
+- More Details in recipes such as **allergen information** and **cost** to purchase ingredients.
+- Country or cuisine style filters to allow users to search for a recipe based on its style such as **Italian**, **Indian** etc.Time constraints did not allow for implementation.
 
 # Technologies Used
 
