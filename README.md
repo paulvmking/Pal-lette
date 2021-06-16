@@ -110,7 +110,36 @@ The site also has a footer containing social media links to **Facebook**, **Inst
 The **fonts** and **colors** were also continued page to page where applicable
 to give uniformity to the appearance and provide a consistent experience.
 
-### Existing Features 
+### Other Existing Features 
+
+#### All users 
+
+-General vistors do not have access to all pages and thus only have a limited amount of optiuon therefore encouraging registration.Upon resizing the pages for all users less and less information is displayed on the cards until just a card, image, and view recipe button is displayed on the smallest screens to not make the cards to busy and keep it simple.
+
+##### Home Page 
+
+- Has a greeting to the user with a **view recipes** button located below it,this redirects the user to the **recipes** page.
+
+##### Recipes Page
+
+- Has a **paginated** view of all the current recipes with a **view recipe** button located on each that redirects the user to the individual **Recipe** page.
+- Each card displays a **recipe image** as well as information such as **Recipe name**, **Vegan friendly**, **Prep-time**, **Cook-time** and how many people the recipe is intended to serve with corresponding **icons** located beside each for good visual contrast with the plain card background.
+- It also contains a **search** field to allow the user to search for words that may be included in the **ingredients**, **directions** or **recipe name** this will only show results that contain the searched term.
+- A **Reset** button is located beside it to allow the user to rest the search field and begin again.
+
+##### Individual Recipe Page
+
+- Has a page sized card that displays a **recipe image** as well as information such as **Recipe name**, **Vegan friendly**, **Ingredients**, **Directions** and how many people the recipe is intended to serve with corresponding **icons** located beside each for good visual contrast with the plain card background.
+
+##### Register Page
+
+- Contains a 2 step **form** for registration which requires a **username** that is not already picked and a **password** which will be **hashed** in order to sign up to the site.
+- It also contains a **submit** button to complete the registration, and a **Log in** button for users who may want to log in to their profile but perhaps clicked the **register** link by accident.
+
+##### Log in Page
+
+- Contains a 2 step **form** for Log in which requires a **username** that is registered and the **password** associated with that username to log in.
+- It also contains a **log in** button to complete the login process, and a **register** button for users who may want to register a profile but perhaps clicked the **log in** link by accident.
 
 ### Features Left to Implement
 
