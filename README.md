@@ -89,6 +89,27 @@ I believe the images chosen fit very well overall as they relate to the subject 
 
 ### Common features on all pages 
 
+#### All site visitors
+
+The site features a responsive navigation bar stuck **on top** for easy navigation to the different pages which also collapses to a **mobile side-nav** when the screen size is reduced to a certain point which contains all the same links as the full size navbar.The logo on the **top left** will provide a one click link to the **Home** page these features are included on every page.The navigation bar is also linked to the other pages **Recipes**,**Login**, and **Register** to allow easy access to any page the **Non registered** user may require.
+The site also has a footer containing social media links to **Facebook**, **Instagram**, **Twitter**, **Youtube**.
+The **fonts** and **colors** were also continued page to page where applicable
+to give uniformity to the appearance and provide a consistent experience.
+
+#### Logged in Users
+
+The site features a responsive navigation bar stuck **on top** for easy navigation to the different pages which also collapses to a **mobile side-nav** when the screen size is reduced to a certain point which contains all the same links as the full size navbar.The logo on the **top left** will provide a one click link to the **Home** page these features are included on every page.The navigation bar is also linked to the other pages **Recipes**,**Profile**,**New Recipe**, and **Logout** to allow easy access to any page the **Logged in/Registered** user may require.
+The site also has a footer containing social media links to **Facebook**, **Instagram**, **Twitter**, **Youtube**.
+The **fonts** and **colors** were also continued page to page where applicable
+to give uniformity to the appearance and provide a consistent experience.
+
+#### Site Admin
+
+The site features a responsive navigation bar stuck **on top** for easy navigation to the different pages which also collapses to a **mobile side-nav** when the screen size is reduced to a certain point which contains all the same links as the full size navbar.The logo on the **top left** will provide a one click link to the **Home** page these features are included on every page.The navigation bar is also linked to the other pages **Recipes**,**Profile**,**New Recipe**,**Manage Categories**, and **Logout** to allow easy access to any page the **Site Admin** may require.
+The site also has a footer containing social media links to **Facebook**, **Instagram**, **Twitter**, **Youtube**.
+The **fonts** and **colors** were also continued page to page where applicable
+to give uniformity to the appearance and provide a consistent experience.
+
 ### Existing Features 
 
 ### Features Left to Implement
