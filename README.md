@@ -94,7 +94,7 @@ I believe the images chosen fit very well overall as they relate to the subject 
 The site features a responsive navigation bar stuck **on top** for easy navigation to the different pages which also collapses to a **mobile side-nav** when the screen size is reduced to a certain point which contains all the same links as the full size navbar.The logo on the **top left** will provide a one click link to the **Home** page these features are included on every page.The navigation bar is also linked to the other pages **Recipes**,**Login**, and **Register** to allow easy access to any page the **Non registered** user may require.
 The site also has a footer containing social media links to **Facebook**, **Instagram**, **Twitter**, **Youtube**.
 The **fonts** and **colors** were also continued page to page where applicable
-to give uniformity to the appearance and provide a consistent experience.
+to give uniformity to the appearance and provide a consistent experience.The site logo **Pallette** when clicked will also redirect the user back to the **homepage**.
 
 #### Logged in Users
 
@@ -135,11 +135,54 @@ to give uniformity to the appearance and provide a consistent experience.
 
 - Contains a 2 step **form** for registration which requires a **username** that is not already picked and a **password** which will be **hashed** in order to sign up to the site.
 - It also contains a **submit** button to complete the registration, and a **Log in** button for users who may want to log in to their profile but perhaps clicked the **register** link by accident.
+- Displays a **flash** message indicating whether registration was susccessful or not.
 
 ##### Log in Page
 
 - Contains a 2 step **form** for Log in which requires a **username** that is registered and the **password** associated with that username to log in.
 - It also contains a **log in** button to complete the login process, and a **register** button for users who may want to register a profile but perhaps clicked the **log in** link by accident.
+- Displays a **flash** message indicating whether login was susccessful or not.
+
+#### Registered/Logged in users
+
+Logged in users will have access to all of the above features with the exceptions of the **Log in** and **Register** pages as these are replaced by a **new recipes** page, a **new recipes**, a **profile** page and a **logout** link. In addition I have listed additional items located on the accessible pages that are available to logged in users but not general site visitors.
+
+##### Home Page 
+
+- Has a greeting to the user with a **view recipes** button located below it,this redirects the user to the **recipes** page.
+- Has an updated navbar with as discussed above links for **recipes**, **profile**, **new recipes** and **logout**.
+
+##### Recipes Page
+
+- Has a **paginated** view of all the current recipes with a **view recipe** button located on each that redirects the user to the individual **Recipe** page.
+- Each card displays a **recipe image** as well as information such as **Recipe name**, **Vegan friendly**, **Prep-time**, **Cook-time** and how many people the recipe is intended to serve with corresponding **icons** located beside each for good visual contrast with the plain card background.
+- It also contains a **search** field to allow the user to search for words that may be included in the **ingredients**, **directions** or **recipe name** this will only show results that contain the searched term.
+- A **Reset** button is located beside it to allow the user to rest the search field and begin again.
+- Contains add to and remove from **favourites** on each card in the form of styled anchor links which are only displayed once a user is logged in. Add is displayed as a **plus** and remove as a **minus** icon and **colored** differently so as to make it obvious to the user as to which button corresponds to which action.This will also display a **flash** message to the user indication successful removal or addition of said recipe from favourites.
+
+##### Individual Recipe Page
+
+- Has a page sized card that displays a **recipe image** as well as information such as **Recipe name**, **Vegan friendly**, **Ingredients**, **Directions** and how many people the recipe is intended to serve with corresponding **icons** located beside each for good visual contrast with the plain card background.
+- Contains add to and remove from **favourites** on each card in the form of styled anchor links which are only displayed once a user is logged in. Add is displayed as a **plus** and remove as a **minus** icon and **colored** differently so as to make it obvious to the user as to which button corresponds to which action.This will also display a **flash** message to the user indication successful removal or addition of said recipe from favourites.
+
+##### Profile Page
+
+- Contains a greeting with the **username** of the user displayed.
+- Contains a heading for **favourite recipes** displayed regardless of if the user has favourited any or not so as to show the user upon login that the favourite functionailty exists now that they have a profile.Under this heading is where any favourited recipes names will be displayed so the user can quickly find them.
+- Contains a heading for **created recipes** displayed regardless of if the user has created any or not so as to show the user upon login that the create functionailty exists now that they have a profile.Under this heading is where any created recipes names will be displayed so the user can quickly find them. This section also has **colored** **edit** and **deleted** buttons that will allow the user to edit or delete recipes belonging to them alone.
+
+##### New recipe Page
+
+- Contains a 8 step **form** to create a new recipe. A dropdown with categories appears first to allow the user to select a category for their recipe.
+- It also contains a form field with **icons** for each of the required pieces of the recipe to create consistency across the site for all recipes.
+- It contains an input to allow the user to upload an **image** url for their recipe.
+- It contains a switch to allow the user to select whether the recipe is deemed **vegan** or not which depending on the users choice will show the green **Vegan** icon and text or the red **not vegan** icon and text.
+- It contains a **create** button which will create the recipe once the required form fields have been filled out.
+
+##### Edit recipe Page
+
+- Contains all the features from the above **New recipe** page with the exception that all the fields are **prepopulated** with the users data from their own original recipe.
+- This will also display a **flash** message to the user indicating successful editing of said recipe.
 
 ### Features Left to Implement
 
