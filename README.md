@@ -63,6 +63,16 @@ It also feature **search** functionality and **pagination** to aid the user when
 
 ## Colour Scheme
 
+The site features a few choice colors being :
+- ![#fbe5d0](https://via.placeholder.com/15/fbe5d0/000000?text=+) **Paint-Chip** (#fbe5d0),
+- ![#b1685d](https://via.placeholder.com/15/b1685d/000000?text=+) **Electric-Brown** (#b1685d),
+- ![#519839](https://via.placeholder.com/15/519839/000000?text=+) **Green** similar to **Olive** (#519839),
+- ![#b04632](https://via.placeholder.com/15/b04632/000000?text=+) **Medium Carmine** (#b04632),
+- ![#e1eedd](https://via.placeholder.com/15/e1eedd/000000?text=+) **Off White** (#e1eedd),
+
+These colours were chosen to give a **Spacious** feel to the website but not have it so empty that it was not a user friendly environment.
+Also some of the colors were used to give a healthy earthy feel to the site through the mixture of green and brown mixed with creamy colours. The lack of images on the home page was used to direct the users attention to the text explaining the purpose of the site which is focused on functionality and not on display though the display aspect is addressed once the user navigates to the **recipes** page and onwards throught he use of cards with images displaying the recipes themselves.
+
 ## Fonts
 
 ## Imagery
