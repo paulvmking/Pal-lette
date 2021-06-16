@@ -40,6 +40,10 @@ i#like.fas.fa-minus.text-shadow{
     margin: 5px;
 }
 
+.content{
+  margin: 25px;
+}
+
 .card-panel {
     background-color: #fbe5d0;
 }
