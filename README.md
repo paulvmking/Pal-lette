@@ -200,6 +200,21 @@ On top of this the admin also has the ability to create,edit and remove all reci
 
 # Technologies Used
 
+- **[HTML5](https://en.wikipedia.org/wiki/HTML5)** - To write core content contained on site.
+- **[CSS3](https://en.wikipedia.org/wiki/CSS)** - To style core content displayed on site.
+- **[Python3](https://www.python.org/)** - To write core backend logic for the site such as routes for anchor links and defensive features used in tandem with Flask and MongoDB to build an interactive database for the site.
+- **[Flask](https://flask.palletsprojects.com/en/2.0.x/#)** - Used as the web microframework for the site.
+- **[MongoDB](https://www.mongodb.com/)** - Used as the database for the site.
+- **[Jinja](https://jinja.palletsprojects.com/en/3.0.x/)** - Used as the templating language.
+- **[MaterializeCSS](https://materializecss.com/)** - Used to help style and provide grids for layout of the site. Also used to design the site with mobile first mindset and implement features for responsiveness such as the navigation bar more easily.Materialize version 1.0.0 was used.
+- **[jQuery](https://jquery.com/)** - Used to reference Javascript used for navbar and validation on the forms.
+- **[FontAwesome](https://fontawesome.com/)** - Used as a link and source for icons displayed on site.
+- **[Gitpod](https://www.gitpod.io/)** - Used as the interactive development environment (IDE) for the project.
+- **[GitHub](https://github.com/)** - Used to display and share all files related to the project.
+- **[Balsamiq](https://balsamiq.com/wireframes/?gclid=CjwKCAiA8Jf-BRB-EiwAWDtEGkJ6iKra1Rpbr_P_NWTlH_xSyg5fnl9cG87m1uVtg1HJKb3bCsG0BhoC3yMQAvD_BwE)** - Used to create wireframes for the site.
+- **[Placeholder](https://placeholder.com/)** - Used to add colors to Readme.
+- **[GameChangersMovie](https://gamechangersmovie.com/)** - Used to source images and recipe content for the site.
+
 # Testing 
 
 ## Compatibility
