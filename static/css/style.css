@@ -2,6 +2,16 @@ body {
     background-color: #fbe5d0;
    }
 
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
 .text-shadow {
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
@@ -45,6 +55,15 @@ div#card-content.card-content {
 div.col.s4.btn-container {
     padding: 0px;
     border: 0px;
+}
+
+footer.page-footer{
+  background-color: #b1685d;
+}
+
+.social-icons a {
+  color: #e1eedd;
+  font-size: 2rem;
 }
 
 @media only screen and (max-width: 1220px) {
