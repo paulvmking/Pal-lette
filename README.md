@@ -219,6 +219,49 @@ On top of this the admin also has the ability to create,edit and remove all reci
 
 # Deployment 
 
+- In order to deploy this project as I have the following is required [Python3](https://www.python.org/),  [Github account](https://github.com/),  [MongoDB account](https://www.mongodb.com/),  [Heroku account](https://www.heroku.com/).
+
+After you have succesfully signed up for these and installed the requirements proceed as below.
+
+#### Step 1 Clone the project 
+
+To make a local clone, follow these steps. 
+1. Log in to GitHub and go to the repository to wish to clone. 
+2. Click on the green button that reads **Code**.
+3. Click on **“Open with GitHub Desktop”** and follow the prompts.
+
+#### Step 2 Use the local copy
+1. Install all the requirements: Go to the workspace of your local copy. 
+2. In the terminal type: **pip3 install -r requirements.txt** and hit enter, this will create
+a file which python will need to run correctly as it contains a list of required dependancies.
+3. Create your database in MongoDB using the following steps: 
+    - **Login** to your account.
+    - Create a **cluster** and a **database** within that cluster.
+    - Create 3 collections in the database mine were named: **categories, recipes,** and **users.**
+    - Add string values for the collections.(Mine were all string values with the exception of **favourite_recipes** in **users collection** which is an **array** for each user)
+4. Create the environment variables 
+    - Create a .gitignore file in the root directory of the project if it does not already contain one, this will be used to ignore and not share your environment variables.
+    - Add the env.py file to the .gitignore file so its contents are ignored when pushing changes.
+    - Create the file env.py. This  will contain all the environment variables such as os.environ.setdefault("IP", "Your IP here"), os.environ.setdefault("PORT", "Your port here"), os.environ.setdefault("SECRET_KEY", "Your secret key here"), os.environ.setdefault("MONGO_URI", "Your mongo URI here"), os.environ.setdefault("MONGO_DBNAME", "Your database name from mongDB here").
+5. To run the application, open your terminal and type "python3 app.py" without quotes.
+
+#### Step 3 Deploying to Heroku  
+1. Set up local workspace for Heroku 
+    - In your terminal type the following **pip3 freeze -- local > requirements.txt.** (This file is needed for Heroku to know which files to install as mentioned above a requirements.txt tells heroku you are working with python.)
+2. In the terminal type the following **python app.py > Procfile** (The file is again for Heroku)
+3. Login to your Heroku account and create a new app and select your region(I used **Europe**). 
+4. Enable automatic deployment from GitHub by clicking on the deploy tab in Heroku and click **Connect to GitHub**. 
+5. Search with your repository name from GitHub and when it finds it click to connect with it. 
+6. Go to the application **settings** in Heroku and go to **Config Vars** this will contain your variable from earlier such as your secret key and your IP,Port etc
+7. Click on **Reveal Config Vars**.
+8. Enter the variables contained in your env.py file making sure that they match. **IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME must all be the same!**
+9. Add and then commit the requirements.txt and Procfile to repository. 
+10. Go back to the deploy tab in Heroku and navigate to **Automatic deployment**.
+11. Click on **Enable Automatic Deployment** by using **Manual deployment**.
+12. Finally Click on **Deploy Branch**.
+
+To View the live app you can click on **Open app** in the right corner of your Heroku account. The app wil open and deployment is successful.
+
 # Credits 
 
  ## Code
