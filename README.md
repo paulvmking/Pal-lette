@@ -215,19 +215,7 @@ On top of this the admin also has the ability to create,edit and remove all reci
 - **[Placeholder](https://placeholder.com/)** - Used to add colors to Readme.
 - **[GameChangersMovie](https://gamechangersmovie.com/)** - Used to source images and recipe content for the site.
 
-# Testing 
-
-## Compatibility
-
-## Performance 
-
-## User Stories Testing
-
-## Usability 
-
-## Issues and Fixes during Development
-
-## Known Bugs
+# [Testing](TESTING.md)
 
 # Deployment 
 
