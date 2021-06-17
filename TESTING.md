@@ -25,6 +25,8 @@ therefore passing the test.
 - **Aim** - **Footer** should be always at the bottom of page.
 - **Result** - Content from pages was removed and added again to see if the footer changed position and it remained on the bottom of page therefore passing the test.
 
+## Button/Link Functionality
+
 ### Buttons 
 
 - **Aim** - When the **register** button is clicked it displays a flash alerting the user it was either succesful or unsuccessful.
@@ -41,6 +43,11 @@ therefore passing the test.
 - **Result** - Buttons clicked and recipe deletes after the user clicks yes to the prompt therefore passing the test.
 - **Aim** - When **Admin** is in their account the create,edit aand delete buttons should be only accesbile to them for manage categories.
 - **Result** - Buttons only visible to admin and when clicked they perform their actions as expected therefore passing the test.
+
+### Links
+
+- **Aim** - When **social media** icon links are clicked it should redirect user to relevant social pages in a new tab.
+- **Result** - Links were clicked and user redirected to relevant **social sites** in a new tab therefore passing the test.
 
 ## Compatibility
 
