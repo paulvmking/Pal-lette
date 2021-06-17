@@ -97,6 +97,10 @@ I believe the images chosen fit very well overall as they relate to the subject 
 
 <img src="static/images/wireframes/mobile ms3.png">
 
+#### **Database Design**
+
+<img src="static/images/wireframes/database_layout.png">
+
 # Features
 
 ### Common features on all pages 
