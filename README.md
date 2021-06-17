@@ -87,15 +87,15 @@ I believe the images chosen fit very well overall as they relate to the subject 
 
 #### **Desktop** 
 
-<img src="static/images/wireframes/desktop ms3.png">
+<img src="static/images/wireframes/desktop_ms3.png">
 
 #### **Tablet** 
 
-<img src="static/images/wireframes/tablet ms3.png">
+<img src="static/images/wireframes/tablet_ms3.png">
 
 #### **Mobile** 
 
-<img src="static/images/wireframes/mobile ms3.png">
+<img src="static/images/wireframes/mobile_ms3.png">
 
 #### **Database Design**
 
