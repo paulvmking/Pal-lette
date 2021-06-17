@@ -283,12 +283,28 @@ To View the live app you can click on **Open app** in the right corner of your H
 
  ## Code
 
+ - My mentor **Marantha Ilesanmi** for his help with the restructuring of my pagination code and search function to make the functionality better.
+
+ <img style="border:0;width:150px;height:100px" src="static/images/credit_images/credit_1.png" alt="credit!" />
+
+ - Code institute tutors who helped with bugs related to implementation of favourites functionality.
+
+ <img style="border:0;width:150px;height:100px" src="static/images/credit_images/credit_2.png" alt="credit!" />
+
  - All other code was written by the creator of the site - **Paul King**.
 
  ## Content 
 
  ## Text
 
+ - Recipe information was obtained from **[GameChangersMovie](https://gamechangersmovie.com/)**.
+
  ## Media 
 
+ - Images for recipes were obtained from **[GameChangersMovie](https://gamechangersmovie.com/)**.
+
  ## Acknowledgements 
+
+ - Code Institute and Tim who through the creation of a mini project helped to prepare me for creating CRUD functionality.
+ - My mentor **Marantha Ilesanmi** for his help, advice and patience.
+ - Code Institute and their tutors.
