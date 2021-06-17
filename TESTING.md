@@ -89,3 +89,5 @@ Additional comments were that the page highlighted the recipes well and that the
 ## Issues and Fixes during Development
 
 ## Known Bugs
+
+Favicon shows for all pages except the users profile page. Time did not allow for a solution to be found though it seems a trivial issue as the favicon does not affect the performance of the site.
