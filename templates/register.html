@@ -1,41 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- Register main heading -->
 <h2 class="center-align">Register now for instant access!</h2>
-
-    <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-user-plus orange-text text-shadow-icon prefix"></i>
-                        <input id="username" name="username" type="text" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
-                        <label for="username">Please Enter a Username (min 5+ characters)</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-lock orange-text text-shadow-icon prefix"></i>
-                        <input id="password" name="password" type="password" minlength="6" maxlength="20" pattern="^[a-zA-Z0-9]{6,20}$" class="validate" required>
-                        <label for="password">Password (min 6+ characters)</label>
-                    </div>
-                </div>
-                <div class="row center-align">
-                    <button class="btn waves-effect orange darken-4" type="submit" name="action">Submit
-                        <i class="fas fa-sign-in-alt right"></i>
-                    </button>
+<!-- Register form -->
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <div class="card-panel">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-plus orange-text text-shadow-icon prefix"></i>
+                    <input id="username" name="username" type="text" minlength="5" maxlength="20"
+                        pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
+                    <label for="username">Please Enter a Username (min 5+ characters)</label>
                 </div>
             </div>
-        </form>
-    </div>
-
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                Already registered?
-                <button class="btn waves-effect orange darken-4"><a href="{{ url_for('login') }}" class="orange darken-4">Log in</a></button>
-            </p>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-lock orange-text text-shadow-icon prefix"></i>
+                    <input id="password" name="password" type="password" minlength="6" maxlength="20"
+                        pattern="^[a-zA-Z0-9]{6,20}$" class="validate" required>
+                    <label for="password">Password (min 6+ characters)</label>
+                </div>
+            </div>
+            <div class="row center-align">
+                <button class="btn waves-effect orange darken-4" type="submit" name="action">Submit
+                    <i class="fas fa-sign-in-alt right"></i>
+                </button>
+            </div>
         </div>
+    </form>
+</div>
+<!-- Button to redirect user to log in page -->
+<div class="row">
+    <div class="col s12">
+        <p class="center-align">
+            Already registered?
+            <a class="btn waves-effect orange darken-4" href="{{ url_for('login') }}">Log in</a>
+        </p>
     </div>
+</div>
 
 {% endblock %}
