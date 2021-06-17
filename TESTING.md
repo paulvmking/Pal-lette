@@ -49,6 +49,12 @@ therefore passing the test.
 - **Aim** - When **social media** icon links are clicked it should redirect user to relevant social pages in a new tab.
 - **Result** - Links were clicked and user redirected to relevant **social sites** in a new tab therefore passing the test.
 
+## JavaScript Validator
+
+- **[JSHint](https://jshint.com/)** - To Validate JavaScript and Jquery(Please copy and paste selected file into JSHint to reproduce results).
+
+- **script.js** File = **Passed**- No errors found. One undefined variable $ (Warnings are ES6 related)
+
 ## Compatibility
 
 | Screen              | Google Chrome    | Safari           | Microsoft Edge   | Opera            | Mozilla Firefox  | Internet Explorer |
