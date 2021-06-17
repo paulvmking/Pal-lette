@@ -12,6 +12,7 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+# Configuration #
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -19,6 +20,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Pagination #
 recipes = mongo.db.recipes.find()
 
 PER_PAGE = 4
@@ -34,12 +36,14 @@ def paginated(recipes, page):
     ]
 
 
+# Homepage #
 @app.route("/")
 @app.route("/get_homepage")
 def get_homepage():
     return render_template("index.html")
 
 
+# Main recipes page #
 @app.route("/get_recipes")
 def get_recipes():
     page = request.args.get(get_page_parameter(), type=int, default=1)
@@ -52,6 +56,7 @@ def get_recipes():
                            pagination=pagination)
 
 
+# Search functionality #
 @app.route("/search", methods=["GET", "POST"])
 def search():
     page = request.args.get(get_page_parameter(), type=int, default=1)
@@ -68,6 +73,7 @@ def search():
                            title="Search Result", search=True)
 
 
+# Registration page #
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -90,6 +96,7 @@ def register():
     return render_template("register.html")
 
 
+# Log in page #
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -116,6 +123,7 @@ def login():
     return render_template("login.html")
 
 
+# User profile page #
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
@@ -124,6 +132,7 @@ def profile(username):
     recipes = list(mongo.db.recipes.find())
     favourite_recipes = mongo.db.users.find_one(
                 {"username": session["user"]})["favourite_recipes"]
+    # Favourite recipe display functionality #
     favourites = []
     for recipe in favourite_recipes:
         favourites.append(mongo.db.recipes.find_one({"_id": recipe}))
@@ -135,6 +144,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# Logout functionality #
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -143,6 +153,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Create recipe functionality and page #
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -167,6 +178,7 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
+# Edit recipe functionality and page #
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -192,6 +204,7 @@ def edit_recipe(recipe_id):
         "edit_recipe.html", recipe=recipe, categories=categories)
 
 
+# Delete recipe functionality #
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
@@ -204,6 +217,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
+# Get categories for admin functionality #
 @app.route("/get_categories")
 def get_categories():
     username = mongo.db.users.find_one(
@@ -216,6 +230,7 @@ def get_categories():
         return redirect(url_for("profile", username=session["user"]))
 
 
+# Add categories for admin functionality #
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     username = mongo.db.users.find_one(
@@ -235,6 +250,7 @@ def add_category():
         return redirect(url_for("profile", username=session["user"]))
 
 
+# Edit categories for admin functionality #
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     username = mongo.db.users.find_one(
@@ -255,6 +271,7 @@ def edit_category(category_id):
         return redirect(url_for("profile", username=session["user"]))
 
 
+# Delete categories for admin functionality #
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     username = mongo.db.users.find_one(
@@ -268,6 +285,7 @@ def delete_category(category_id):
         return redirect(url_for("profile", username=session["user"]))
 
 
+# View single recipe #
 @app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
 def view_recipe(recipe_id):
 
@@ -277,6 +295,7 @@ def view_recipe(recipe_id):
                            categories=categories)
 
 
+# Add recipe to favourites array in DB #
 @app.route("/favourite_recipe/<recipe_id>", methods=["GET", "POST"])
 def favourite_recipe(recipe_id):
     favourites = mongo.db.users.find(
@@ -294,6 +313,7 @@ def favourite_recipe(recipe_id):
         return redirect(url_for("profile", username=session["user"]))
 
 
+# Remove or delete recipe from favourites functionality #
 @app.route("/remove_recipe/<recipe_id>", methods=["GET", "POST"])
 def remove_recipe(recipe_id):
     favourites = list(mongo.db.users.find(
@@ -309,6 +329,7 @@ def remove_recipe(recipe_id):
         return redirect(url_for("profile", username=session["user"]))
 
 
+# Run the application #
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
