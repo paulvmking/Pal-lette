@@ -85,6 +85,18 @@ I believe the images chosen fit very well overall as they relate to the subject 
 
 ### Wireframes
 
+#### **Desktop** 
+
+<img src="static/images/wireframes/desktop ms3.png">
+
+#### **Tablet** 
+
+<img src="static/images/wireframes/tablet ms3.png">
+
+#### **Mobile** 
+
+<img src="static/images/wireframes/mobile ms3.png">
+
 # Features
 
 ### Common features on all pages 
