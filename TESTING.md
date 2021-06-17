@@ -65,6 +65,18 @@ to the largest (1200px +)
 
 ## Performance 
 
+Testing for performance was done using [WebPageTest](https://www.webpagetest.org/).
+
+- **Home page** = 100/100 on all except: Use gzip compression for transferring compressable responses 98/100 [View Results](https://www.webpagetest.org/result/210617_AiDc0K_8408cb663fa197e7c3a18bcafd16f1f2/1/performance_optimization/)
+- **Recipes Page** = 100/100 on all except:Compress Images and Use gzip compression for transferring compressable responses 98/100 [View Results](https://www.webpagetest.org/result/210617_AiDcHE_a465ececcc97e31ab3f2d2fc3836b955/1/performance_optimization/)
+- **Recipe Page** = 100/100 on all except:Compress Images and Use gzip compression for transferring compressable responses 96/100 [View Results](https://www.webpagetest.org/result/210617_BiDcBK_db05ced9ff53a16d385403369719a9bd/1/performance_optimization/)
+- **Add Recipe Page** = 100/100 on all except:Compress Images and Use gzip compression for transferring compressable responses 94/100 [View Results](https://www.webpagetest.org/result/210617_AiDcZK_f5c2de5521ea5e04c815741f23ccf1df/1/performance_optimization/)
+- **Log in page** = 100/100 on all except: Use gzip compression for transferring compressable responses 97/100 [View Results](https://www.webpagetest.org/result/210617_BiDc3H_51ac3ada5e535e8f1ccf7d47821e6880/1/performance_optimization/)
+- **Register page** = 100/100 on all except: Use gzip compression for transferring compressable responses 97/100 [View Results](https://www.webpagetest.org/result/210617_AiDcS4_994f3d33c7de0004d923561fe11d53b4/1/performance_optimization/)
+
+All other pages could not be tested for performance as special permissions were required to view them such as being an admin for manage categories page or logging in to a profile to view the profile page. I intend to work on the features mentioned in future and test the rest of the pages for performance once I find a workaround. I am pretty happy with the results from the performance testing though I would like to acheive 100 percent in all categories in future.
+
+
 ## User Stories Testing
 
 ## Usability 
