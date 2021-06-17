@@ -73,6 +73,22 @@ therefore passing the test.
             alt="Valid CSS!" />
     </a>
 
+## HTML5 Validator
+
+- **[validatorW3C](https://validator.w3.org/#validate_by_input)** - To Validate HTML5.
+
+- **Base template page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
+- **Add category page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
+- **Add recipe page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
+- **Manage categories Page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
+- **Edit category page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
+- **Edit recipe page** = **Passed**- No errors found except for Jinja templating and also duplicate id due to the fact it contains html which will only render if the user is an admin and this form uses the same id but only one can be in use at one time.The checkbox also raises an error but it was taken from materialize css page and functions as a switch.[Results](https://validator.w3.org/nu/#textarea)
+- **Homepage page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
+- **Log in page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
+- **Profile page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
+- **Recipes page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
+- **Recipe page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
+- **Register page** = **Passed**- No errors found except for Jinja templating.[Results](https://validator.w3.org/nu/#textarea)
 
 ## Compatibility
 
@@ -117,7 +133,7 @@ Additional comments were that the page highlighted the recipes well and that the
  - Attempted fixes = Non viable solutions tried were changing the pagination to work inside the get_recipes function and while it did work it didnt work as intended and still threw errors.
  - Solution = The problem ended up being that I was accessing the DB as a list in one instance and as a singular in another but both within the same function so I changed both to lists and it fixed the issue.
  - I also kept the Pagination fairly close to the original layout with some minor tweeks to help with readiblity and reduction of code used.
- 2.User able to brute force access pages using url only meant for admin.
+2.User able to brute force access pages using url only meant for admin.
  - Solution was to add condtions to the backend code to ensure only the admin could access those pages.
 
 ## Known Bugs
