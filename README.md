@@ -230,6 +230,7 @@ On top of this the admin also has the ability to create,edit and remove all reci
 - **[Balsamiq](https://balsamiq.com/wireframes/?gclid=CjwKCAiA8Jf-BRB-EiwAWDtEGkJ6iKra1Rpbr_P_NWTlH_xSyg5fnl9cG87m1uVtg1HJKb3bCsG0BhoC3yMQAvD_BwE)** - Used to create wireframes for the site.
 - **[Placeholder](https://placeholder.com/)** - Used to add colors to Readme.
 - **[GameChangersMovie](https://gamechangersmovie.com/)** - Used to source images and recipe content for the site.
+- **[Favicon.io](https://favicon.io/)** - Used to add Favicon to site.
 
 # [Testing](TESTING.md)
 
