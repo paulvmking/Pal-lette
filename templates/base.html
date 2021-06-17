@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
     <header>
         <!-- top navbar -->
         <nav class="nav-extended text-shadow orange darken-4">
@@ -25,9 +24,11 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+                    <!-- allows only logged in users to view these buttons -->
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
+                        <!-- allows only the admin to view these buttons -->
                         {% if session.user|lower == "admin"|lower %}
                             <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
                         {% endif %}
@@ -39,27 +40,28 @@
                 </ul>
             </div>
         </nav>
-
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li>
                 <a href="{{ url_for('get_homepage') }}" class="brand-logo">Pal-lette</a>
             </li>
             <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+            <!-- allows only logged in users to view these buttons -->
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
-                {% if session.user|lower == "admin"|lower %}
-                    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                {% endif %}
+                <!-- allows only the admin to view these buttons -->
+                    {% if session.user|lower == "admin"|lower %}
+                        <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+                    {% endif %}
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-            {% else %}
+                {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
     </header>
-
+    <!-- flash messages -->
     <section>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -71,34 +73,33 @@
             {% endif %}
         {% endwith %}
     </section>
-
+    <!-- main content displays here -->
     <main class="container">
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
     </main>
-
+    <!-- footer -->
     <footer class="page-footer">
         <div class="container">
-          <div class="row center-align">
-            <div class="col s12">
-              <h5 class="white-text">Follow us on social media</h5>
-            </div>
             <div class="row center-align">
-                <div class="col s12 social-icons">
-                    <a class="grey-text text-lighten-3" href="https://www.youtube.com/" target="_blank">
-                        <i class="fab fa-youtube-square"></i></a>
-                    <a class="grey-text text-lighten-3" href="https://www.instagram.com/" target="_blank">
-                        <i class="fab fa-instagram-square"></i></a>
-                    <a class="grey-text text-lighten-3" href="https://www.twitter.com/" target="_blank">
-                        <i class="fab fa-twitter-square"></i></a>
-                    <a class="grey-text text-lighten-3" href="https://www.facebook.com/" target="_blank">
-                        <i class="fab fa-facebook-square"></i></a>
+                <div class="col s12">
+                    <h5 class="white-text">Follow us on social media</h5>
+                </div>
+                <div class="row center-align">
+                    <div class="col s12 social-icons">
+                        <a class="grey-text text-lighten-3" href="https://www.youtube.com/" target="_blank">
+                            <i class="fab fa-youtube-square"></i></a>
+                        <a class="grey-text text-lighten-3" href="https://www.instagram.com/" target="_blank">
+                            <i class="fab fa-instagram-square"></i></a>
+                        <a class="grey-text text-lighten-3" href="https://www.twitter.com/" target="_blank">
+                            <i class="fab fa-twitter-square"></i></a>
+                        <a class="grey-text text-lighten-3" href="https://www.facebook.com/" target="_blank">
+                            <i class="fab fa-facebook-square"></i></a>
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
-      </footer>
-
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
