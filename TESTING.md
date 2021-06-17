@@ -120,6 +120,56 @@ All other pages could not be tested for performance as special permissions were 
 
 ## User Stories Testing
 
+1. As a new user I want to know the sites purpose immediately.
+  - The Home page has a greeting explaining the purpose of the site, the name also suggests either something food or color related which was the intended purpose for a play on words with Pallette.
+  - The view recipes button is available at the bottom which would further show the user the site is food related.
+  <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_1.png" alt="User story!" />
+
+2. As a new user I want an intuitive search experience.
+  - Upon landing on the home page the user will see the first navigation option which is the view recipes button.
+  - Navigation is done mainly by way of the pagination links on the recipes page, this page also contains a search bar to search for words the recipes may contain such as butter etc.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_2.png" alt="User story!" />
+
+3. As a new user I expect to be able to navigate the site easily to find a recipe.
+  - The navbar also contains links to each page that is accessible depending on the users profile such as admin, logged in user or just a visitor to the site.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_3.png" alt="User story!" />
+
+4. As a new user I expect to be able to sign up to services.
+ - The register page contains a very simple form which can be expanded on in future but for now allows the user to quickly create a secure username and password for later log in.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_4.png" alt="User story!" />
+
+5. As a potential customer I want an easy sign up process.
+ - The register page contains a very simple form which can be expanded on in future but for now allows the user to quickly create a secure username and password for later log in.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_5.png" alt="User story!" />
+
+6. As a potential customer I want an easily explained process for the recipes.
+ - The recipe page contains useful information on the actual recipe selected and some info such as vegaan or not.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_6.png" alt="User story!" />
+
+7. As a potential customer I want to have a good choice as well as favourite recipes.
+ - When the user logs in this gives them access to create their own recipe via the create recipe page but also allows them to favourite their favourite recipes for later.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_7.png" alt="User story!" />
+
+8. As a returning user I want information and other useful content to entice me to return.
+ - The ability to add a recipe and favourite recipes I feel is a good feature that coupled with the fact it is a specific diet type will encourage those who choose this lifestyle to return for ease of use.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_8.png" alt="User story!" />
+
+9. As a returning user I want to be able to create, read, update and delete my own recipes.
+- Full CRUD funtioanlity is present for logged in users to use on their own recipes and the admin can alter any information on the site created by other users.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_9.png" alt="User story!" />
+
+10. As a returning user I want to be able to have access to follow the company on social media.
+- A footer is contained on each page which will open social media links on a new tab.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_10.png" alt="User story!" />
+
+11. As a user I expect to be able to login and out of my own profile.
+- Log in and out functionality is done by way of the navbar located on each page.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_11.png" alt="User story!" />
+
+12. As a site admin I expect to be able to create, read, update and delete any information on the site.
+- The admin can use CRUD functionality on any recipe with the additon of being able to mange the categories also.
+ <img style="border:0;width:150px;height:100px" src="static/images/user_stories/user_story_12.png" alt="User story!" />
+
 ## Usability  
 
 - I shared the website with friends and family and received feedback from them stating the site was easy to use,
