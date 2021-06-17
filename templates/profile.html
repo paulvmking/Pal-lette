@@ -1,60 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- User greeting -->
 <div class="row">
-    <div class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+    <div class="col s12 m8 offset-m2">
         <div class="card-panel">
-            <h3 class="center-align light-blue-text text-darken-4">
+            <h3 class="center-align orange-text text-darken-4">
                 {{ username }}'s Profile
             </h3>
         </div>
     </div>
 </div>
-
+<!-- Favourites heading -->
 <h3 class="red-text text-darken-4 center-align">See your Favourites here!</h3>
-
+<!-- Favourites content -->
 {% for favourite in favourites %}
-<div class="row">
-  <div class="col s12 m12">
-    <div class="card orange darken-2 text-shadow">
-      <div class="card-content white-text">
-        <span class="card-title center-align">{{ favourite.recipe_name }}
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-{% endfor %}
-
-<h3 class="red-text text-darken-4 center-align">See your created Recipes here!</h3>
-
-{% for recipe in recipes %}
-{% if recipe.created_by == username %}
-
-<div class="row">
+  <div class="row">
     <div class="col s12 m12">
       <div class="card orange darken-2 text-shadow">
         <div class="card-content white-text">
-          <span class="card-title center-align">{{ recipe.recipe_name }}
-            {% if session.user|lower == recipe.created_by|lower %}
-            <div class="row">
-              <div class="col s12">
-                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"class="waves-effect green btn-small left">Edit Recipe</a>
-                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect red darken-4 btn-small right delete"
-                 title="delete" onclick="return confirm('Are you sure you want to delete this recipe?')">Delete Recipe</a>
-              </div>
-            </div>
-            {% endif %}
+          <span class="card-title center-align">{{ favourite.recipe_name }}
           </span>
         </div>
       </div>
     </div>
   </div>
-
-{% else %}
-
-
-{% endif %}
 {% endfor %}
-
+<!-- Recipes created heading -->
+<h3 class="red-text text-darken-4 center-align">See your created Recipes here!</h3>
+<!-- Recipes content -->
+{% for recipe in recipes %}
+  {% if recipe.created_by == username %}
+    <div class="row">
+        <div class="col s12 m12">
+          <div class="card orange darken-2 text-shadow">
+            <div class="card-content white-text">
+              <div class="card-title center-align">{{ recipe.recipe_name }}
+                {% if session.user|lower == recipe.created_by|lower %}
+                <!-- Edit and delete recipes buttons -->
+                  <div class="row">
+                    <div class="col s12">
+                      <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="waves-effect green btn-small left">Edit Recipe</a>
+                      <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect red darken-4 btn-small right delete"
+                      title="delete" onclick="return confirm('Are you sure you want to delete this recipe?')">Delete Recipe</a>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  {% else %}
+  {% endif %}
+{% endfor %}
 {% endblock %}
