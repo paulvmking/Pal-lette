@@ -20,7 +20,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# Pagination #
+# Mentor assisted with restructuring of code related to pagnination #
 recipes = mongo.db.recipes.find()
 
 PER_PAGE = 4
@@ -46,6 +46,7 @@ def get_homepage():
 # Main recipes page #
 @app.route("/get_recipes")
 def get_recipes():
+    # Mentor assisted with restructuring of code related to pagnination #
     page = request.args.get(get_page_parameter(), type=int, default=1)
     recipes = list(mongo.db.recipes.find().sort("_id", -1))
     pagination_obj = paginated(recipes, page)
@@ -59,6 +60,7 @@ def get_recipes():
 # Search functionality #
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    # Mentor assisted with restructuring of code related to pagnination #
     page = request.args.get(get_page_parameter(), type=int, default=1)
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
@@ -132,7 +134,7 @@ def profile(username):
     recipes = list(mongo.db.recipes.find())
     favourite_recipes = mongo.db.users.find_one(
                 {"username": session["user"]})["favourite_recipes"]
-    # Favourite recipe display functionality #
+    # Favourite recipe display functionality advised by CI tutors #
     favourites = []
     for recipe in favourite_recipes:
         favourites.append(mongo.db.recipes.find_one({"_id": recipe}))
