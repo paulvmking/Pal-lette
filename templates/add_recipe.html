@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Main heading for page -->
 <h3 class="red-text text-darken-4 center-align">Add your own custom recipe here!</h3>
-
+<!-- Form for page -->
 <div class="row card-panel grey-lighten-6">
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
         <div class="row">
@@ -11,7 +12,7 @@
                 <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled selected>Choose Meal type</option>
                     {% for category in categories %}
-                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                     {% endfor %}
                 </select>
                 <label for="category_name">Meal Type</label>
@@ -28,47 +29,48 @@
         <div class="row">
             <div class="input-field col s4">
                 <i class="fas fa-user-clock red-text prefix"></i>
-                <textarea id="prep_time" name="prep_time" pattern="[0-9]+" minlength="1" type="number"
+                <textarea id="prep_time" name="prep_time"  minlength="1" 
                     class="materialize-textarea validate" required></textarea>
-                <label for="prep_time">Prep</label>
+                <label for="prep_time">Prep please enter in number format</label>
             </div>
             <div class="input-field col s4">
                 <i class="fas fa-clock red-text prefix"></i>
-                <textarea id="cook_time" name="cook_time" pattern="[0-9]+" minlength="1" type="number"
+                <textarea id="cook_time" name="cook_time"  minlength="1" 
                     class="materialize-textarea validate" required></textarea>
-                <label for="cook_time">Cook</label>
+                <label for="cook_time">Cook  please enter in number format</label>
             </div>
             <div class="input-field col s4">
                 <i class="fas fa-utensils red-text prefix"></i>
-                <textarea id="serves" name="serves" pattern="[0-9]+" minlength="1" type="number" maxlength="4" class="materialize-textarea validate"
-                    required></textarea>
-                <label for="serves">Serves</label>
+                <textarea id="serves" name="serves"  minlength="1"  maxlength="4"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="serves">Serves please enter in number format</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pepper-hot red-text prefix"></i>
-                <textarea id="ingredients" name="ingredients" minlength="5" 
-                    class="materialize-textarea validate" required></textarea>
+                <textarea id="ingredients" name="ingredients" minlength="5" class="materialize-textarea validate"
+                    required></textarea>
                 <label for="ingredients">Ingredients</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left red-text prefix"></i>
-                <textarea id="directions" name="directions" minlength="5" 
-                    class="materialize-textarea validate" required></textarea>
+                <textarea id="directions" name="directions" minlength="5" class="materialize-textarea validate"
+                    required></textarea>
                 <label for="directions">Instructions</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image red-text prefix"></i>
-                <textarea id="image" name="image" minlength="5" 
-                    class="materialize-textarea validate" required></textarea>
+                <textarea id="image" name="image" minlength="5" class="materialize-textarea validate"
+                    required></textarea>
                 <label for="image">Paste your Image Url here</label>
             </div>
         </div>
+        <!-- Switch to select if it is vegan or not -->
         <div class="row">
             <div class="input-field col s6">
                 <div class="switch">
@@ -81,6 +83,7 @@
                 </div>
             </div>
         </div>
+        <!-- Submit button for form -->
         <div class="row">
             <div class="col s12 center-align">
                 <button class="btn orange darken-4" type="submit">
