@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- Main welcome to website -->
 <div class="resize center-align">
     <h3>Welcome to Palette!</h3>
     <div>
         <h5>
             Our aim at Pallette is to provide easy to use and clear vegetarian and vegan recipes to all users.
-            If you enjoy the site please register where you will have access to extra features such as creating new recipes to share with other users 
+            If you enjoy the site please register where you will have access to extra features such as creating new
+            recipes to share with other users
             and being able to favourite other users recipes to your own profile.
         </h5>
         <h5>
             We hope you enjoy your experience and learn some valuable recipes for your lifestyle.
         </h5>
     </div>
+    <!-- Button to navigate to recipes -->
     <div class="row">
         <h4>Click the button below to start viewing recipes!</h4>
         <a href="{{ url_for('get_recipes') }}" class="red btn text-shadow">View Recipes</a>
