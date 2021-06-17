@@ -88,6 +88,13 @@ Additional comments were that the page highlighted the recipes well and that the
 
 ## Issues and Fixes during Development
 
+1.Pagination was messing with the search functionality.
+ - Attempted fixes = Non viable solutions tried were changing the pagination to work inside the get_recipes function and while it did work it didnt work as intended and still threw errors.
+ - Solution = The problem ended up being that I was accessing the DB as a list in one instance and as a singular in another but both within the same function so I changed both to lists and it fixed the issue.
+ - I also kept the Pagination fairly close to the original layout with some minor tweeks to help with readiblity and reduction of code used.
+ 2.User able to brute force access pages using url only meant for admin.
+ - Solution was to add condtions to the backend code to ensure only the admin could access those pages.
+
 ## Known Bugs
 
 Favicon shows for all pages except the users profile page. Time did not allow for a solution to be found though it seems a trivial issue as the favicon does not affect the performance of the site.
