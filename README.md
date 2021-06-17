@@ -1,6 +1,6 @@
 # Pal-lette
 
-<img src="static/images/site_images/Pallette.png">
+<img src="static/images/site_images/pallette.png">
 
 ### Live Site = [Pal-lette](https://pal-lette.herokuapp.com/)
 
