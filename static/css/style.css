@@ -1,6 +1,10 @@
+/* Main body background color */
+
 body {
   background-color: #fbe5d0;
 }
+
+/* Used to create sticky footer from materialize css */
 
 body {
   display: flex;
@@ -8,13 +12,19 @@ body {
   flex-direction: column;
 }
 
+/* Navbar styling */
+
 div.nav-wrapper {
   background-color: #b1685d;
 }
 
+/* Used to create sticky footer from materialize css */
+
 main {
   flex: 1 0 auto;
 }
+
+/* Text shadow addition and anchor styling */
 
 .text-shadow {
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
@@ -28,6 +38,8 @@ a {
   color: inherit;
 }
 
+/* Button styling */
+
 i#like.fas.fa-plus.text-shadow {
   background-color: #519839;
 }
@@ -39,6 +51,8 @@ i#like.fas.fa-minus.text-shadow {
 .btn-small {
   margin: 5px;
 }
+
+/* Card styling */
 
 .content {
   margin: 25px;
@@ -58,10 +72,6 @@ div.card-image.recipe-image img {
   width: 100%;
 }
 
-span.card-title {
-  word-break: none;
-}
-
 div#card-content.card-content {
   text-align: center;
   height: 22vh;
@@ -73,6 +83,8 @@ div.col.s4.btn-container {
   border: 0px;
 }
 
+/* Footer styling */
+
 footer.page-footer {
   background-color: #b1685d;
 }
@@ -81,6 +93,8 @@ footer.page-footer {
   color: #e1eedd;
   font-size: 2rem;
 }
+
+/* Media queries */
 
 @media only screen and (max-width: 1220px) {
   .tab.red-text.fas.fa-user-clock {
@@ -124,7 +138,7 @@ footer.page-footer {
   }
 }
 
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 380px) {
   div.col.s12.recipe-name {
     display: none;
   }

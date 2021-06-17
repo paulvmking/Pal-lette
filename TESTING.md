@@ -61,6 +61,19 @@ therefore passing the test.
 
 - **app.py** File = **Passed**- No errors found.
 
+## CSS3 Validator 
+
+- **[jigsawW3C](https://jigsaw.w3.org/css-validator/#validate_by_input)** - To Validate CSS.
+
+- **style.css** = **Passed** with no errors found.
+
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+
+
 ## Compatibility
 
 | Screen              | Google Chrome    | Safari           | Microsoft Edge   | Opera            | Mozilla Firefox  | Internet Explorer |
