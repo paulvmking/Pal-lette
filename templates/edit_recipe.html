@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- To ensure only the creator can edit the recipe -->
 {% if session.user|lower == recipe.created_by|lower %}
-
+<!-- Main heading for page -->
 <h3 class="red-text text-darken-4 center-align">Changed something? Edit your recipes here!</h3>
-
+<!-- Main content form for page -->
 <div class="row card-panel grey-lighten-6">
     <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
         <div class="row">
@@ -26,28 +26,27 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pencil-alt red-text prefix"></i>
-                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="30"
-                value="{{ recipe.recipe_name }}" type="text" class="validate"
-                    required>
+                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="30" value="{{ recipe.recipe_name }}"
+                    type="text" class="validate" required>
                 <label for="recipe_name">Name of Recipe</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s4">
                 <i class="fas fa-user-clock red-text prefix"></i>
-                <textarea id="prep_time" name="prep_time" pattern="[0-9]" minlength="1" type="number"
-                    class="materialize-textarea validate" required>{{ recipe.prep_time }}</textarea>
+                <textarea id="prep_time" name="prep_time" minlength="1" class="materialize-textarea validate"
+                    required>{{ recipe.prep_time }}</textarea>
                 <label for="prep_time">Prep</label>
             </div>
             <div class="input-field col s4">
                 <i class="fas fa-clock red-text prefix"></i>
-                <textarea id="cook_time" name="cook_time" pattern="[0-9]" minlength="1" type="number"
-                    class="materialize-textarea validate" required>{{ recipe.cook_time }}</textarea>
+                <textarea id="cook_time" name="cook_time" minlength="1" class="materialize-textarea validate"
+                    required>{{ recipe.cook_time }}</textarea>
                 <label for="cook_time">Cook</label>
             </div>
             <div class="input-field col s4">
                 <i class="fas fa-utensils red-text prefix"></i>
-                <textarea id="serves" name="serves" pattern="[0-9]" minlength="1" type="number" maxlength="4" class="materialize-textarea validate"
+                <textarea id="serves" name="serves" minlength="1" maxlength="4" class="materialize-textarea validate"
                     required>{{ recipe.serves }}</textarea>
                 <label for="serves">Serves</label>
             </div>
@@ -55,43 +54,45 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pepper-hot red-text prefix"></i>
-                <textarea id="ingredients" name="ingredients" minlength="5" 
-                    class="materialize-textarea validate" required>{{ recipe.ingredients }}</textarea>
+                <textarea id="ingredients" name="ingredients" minlength="5" class="materialize-textarea validate"
+                    required>{{ recipe.ingredients }}</textarea>
                 <label for="ingredients">Ingredients</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left red-text prefix"></i>
-                <textarea id="directions" name="directions" minlength="5" 
-                    class="materialize-textarea validate" required>{{ recipe.directions }}</textarea>
+                <textarea id="directions" name="directions" minlength="5" class="materialize-textarea validate"
+                    required>{{ recipe.directions }}</textarea>
                 <label for="directions">Instructions</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image red-text prefix"></i>
-                <textarea id="image" name="image" minlength="5" 
-                    class="materialize-textarea validate" required>{{ recipe.image }}</textarea>
+                <textarea id="image" name="image" minlength="5" class="materialize-textarea validate"
+                    required>{{ recipe.image }}</textarea>
                 <label for="image">Paste your Image Url here</label>
             </div>
         </div>
+        <!-- Switch for user slecting whether dish is vegan or not -->
         <div class="row">
             <div class="input-field col s6">
                 <div class="switch">
                     <i class="fas fa-seedling green-text prefix"></i>
                     <label for="is_vegan" class="green-text">
-                            {% if recipe.is_vegan == "on" %}
-                                <input type="checkbox" id="is_vegan" name="is_vegan" checked>
-                            {% else %}
-                                <input type="checkbox" id="is_vegan" name="is_vegan">
-                            {% endif %}
+                        {% if recipe.is_vegan == "on" %}
+                            <input type="checkbox" id="is_vegan" name="is_vegan" checked>
+                        {% else %}
+                            <input type="checkbox" id="is_vegan" name="is_vegan">
+                        {% endif %}
                         <span class="lever"></span>
                         Vegan Friendly
                     </label>
                 </div>
             </div>
         </div>
+        <!-- Cancel and submit buttons for form -->
         <div class="row">
             <div class="col s12 center-align">
                 <a href="{{ url_for('get_recipes') }}" class="btn red text-shadow">
@@ -104,11 +105,11 @@
         </div>
     </form>
 </div>
-
+<!-- To check whether user is admin which can also edit recipe -->
 {% elif session.user|lower == "admin"|lower %}
-
+<!-- Main heading for page -->
 <h3 class="red-text text-darken-4 center-align">Changed something? Edit your recipes here!</h3>
-
+<!-- Main content form for page if admin -->
 <div class="row card-panel grey-lighten-6">
     <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
         <div class="row">
@@ -130,9 +131,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pencil-alt red-text prefix"></i>
-                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="30"
-                value="{{ recipe.recipe_name }}" type="text" class="validate"
-                    required>
+                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="30" value="{{ recipe.recipe_name }}"
+                    type="text" class="validate" required>
                 <label for="recipe_name">Name of Recipe</label>
             </div>
         </div>
@@ -159,16 +159,16 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pepper-hot red-text prefix"></i>
-                <textarea id="ingredients" name="ingredients" minlength="5" 
-                    class="materialize-textarea validate" required>{{ recipe.ingredients }}</textarea>
+                <textarea id="ingredients" name="ingredients" minlength="5" class="materialize-textarea validate"
+                    required>{{ recipe.ingredients }}</textarea>
                 <label for="ingredients">Ingredients</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left red-text prefix"></i>
-                <textarea id="directions" name="directions" minlength="5" 
-                    class="materialize-textarea validate" required>{{ recipe.directions }}</textarea>
+                <textarea id="directions" name="directions" minlength="5" class="materialize-textarea validate"
+                    required>{{ recipe.directions }}</textarea>
                 <label for="directions">Instructions</label>
             </div>
         </div>
@@ -177,17 +177,19 @@
                 <div class="switch">
                     <i class="fas fa-seedling green-text prefix"></i>
                     <label for="is_vegan" class="green-text">
-                            {% if recipe.is_vegan == "on" %}
-                                <input type="checkbox" id="is_vegan" name="is_vegan" checked>
-                            {% else %}
-                                <input type="checkbox" id="is_vegan" name="is_vegan">
-                            {% endif %}
+                        <!-- Switch for user slecting whether dish is vegan or not -->
+                        {% if recipe.is_vegan == "on" %}
+                            <input type="checkbox" id="is_vegan" name="is_vegan" checked>
+                        {% else %}
+                            <input type="checkbox" id="is_vegan" name="is_vegan">
+                        {% endif %}
                         <span class="lever"></span>
                         Vegan Friendly
                     </label>
                 </div>
             </div>
         </div>
+        <!-- Cancel and submit buttons for form-->
         <div class="row">
             <div class="col s12 center-align">
                 <a href="{{ url_for('get_recipes') }}" class="btn red text-shadow">
@@ -202,7 +204,7 @@
 </div>
 
 {% else %}
- 
+
 <h3 class="red-text text-darken-4 center-align">You are not permitted to view this page</h3>
 
 {% endif %}
