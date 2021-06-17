@@ -79,7 +79,12 @@ All other pages could not be tested for performance as special permissions were 
 
 ## User Stories Testing
 
-## Usability 
+## Usability  
+
+- I shared the website with friends and family and received feedback from them stating the site was easy to use,
+all features implemented fuctioned as expected.
+They also mentioned that its simplicity lead to easy usage and navigation and the text and color choices made everything very user friendly.
+Additional comments were that the page highlighted the recipes well and that the addition of the favourites buttons made it easy to see what recipes they were already interested in.
 
 ## Issues and Fixes during Development
 
