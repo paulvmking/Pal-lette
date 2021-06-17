@@ -52,7 +52,7 @@ It also feature **search** functionality and **pagination** to aid the user when
  4. As a new user I expect to be able to sign up to services.
  5. As a potential customer I want an easy sign up process.
  6. As a potential customer I want an easily explained process for the recipes.
- 7. As a potential customer I want to have a good choice as well as leave feedback on recipes.
+ 7. As a potential customer I want to have a good choice as well as favourite recipes.
  8. As a returning user I want information and other useful content to entice me to return.
  9. As a returning user I want to be able to create, read, update and delete my own recipes.
  10. As a returning user I want to be able to have access to follow the company on social media.
